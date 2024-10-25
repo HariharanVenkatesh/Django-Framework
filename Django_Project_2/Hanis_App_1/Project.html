@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title></title>
+        <style>
+            table{
+                border: 1px solid black;
+            }
+            th,td{
+                padding: 10px;
+            }
+            th{
+                text-align:right;
+            }
+            .center{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+        </style>
+    </head>
+    <body>
+        {% block content %}
+            <form action = "Register" method = 'POST'>
+                {% csrf_token %}
+                <table class = "center">
+                    <tr>
+                         <th colspan = "2">
+                            <center><h3>Registration</h3></center><hr>
+                         </th>
+                         <tr>
+                            <th>Name</th>
+                            <td><input type ="text" Name = "Name"></td>
+                         </tr>
+                         <tr>
+                            <th>Password</th>
+                            <td><input type ="Password" Name = "Password"></td>
+                         </tr>
+                         <tr>
+                            <th>Address</th>
+                            <td><input type ="text" Name = "Address"></td>
+                         </tr>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td><input type ="text" Name = "Email"></td>
+                     </tr>
+                     <tr>
+                        <td colspan = "2">
+                            <center><input type = "Submit" value="Submit"></center>
+                        </td>
+                     </tr>
+                </table>
+            </form>
+        {% endblock %}
+    </body>
+</html>
